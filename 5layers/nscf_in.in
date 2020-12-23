@@ -1,0 +1,63 @@
+&control
+    calculation  = 'nscf',
+    restart_mode = 'from_scratch',
+    prefix       = 'MoS2-2H',
+    pseudo_dir   = 'C:/Users/user/Desktop/qe_test/PSEUDO_PP_USPP/all_lda_UPF_v1.5',
+    outdir       = './outdir',
+    wf_collect    = .true.
+    verbosity     = 'high'
+    !forc_conv_thr = 0.01D-3
+    !etot_conv_thr = 1D-6
+/
+&system
+    ibrav       = 4,
+    celldm(1)   = 6.02,
+    celldm(3)   = 13.99140746,
+    nat         = 15,
+    ntyp        = 2,
+    ecutwfc     = 40,
+    ecutrho = 320,
+    occupations = 'smearing',
+    degauss     = 0.01
+    ! vdw_corr    = 'dft-d'
+    ! tot_charge  = 0.5
+/
+&electrons
+    conv_thr         = 1.0e-10
+    electron_maxstep = 100,
+    mixing_mode      = 'plain'
+    !mixing_beta      = 0.1
+    !diagonalization  ='cg'
+/
+
+ATOMIC_SPECIES
+  Mo 95.94000 mo_lda_v1.uspp.F.UPF
+  S 32.06600 s_lda_v1.4.uspp.F.UPF
+
+ATOMIC_POSITIONS (crystal)
+ S  0.333333 0.666667 0.1149419993
+ S  0.333333 0.666667 0.1850580007
+ S  0.666667 0.333333 0.2927688288
+ S  0.666667 0.333333 0.3628848302
+ S  0.333333 0.666667 0.4705956584
+ S  0.333333 0.666667 0.5407116598
+ S  0.666667 0.333333 0.6484224879
+ S  0.666667 0.333333 0.7185384893
+ S  0.333333 0.666667 0.8262493174
+ S  0.333333 0.666667 0.8963653188
+ Mo 0.666667 0.333333 0.15
+ Mo 0.333333 0.666667 0.3278268295
+ Mo 0.666667 0.333333 0.5056536591
+ Mo 0.333333 0.666667 0.6834804886
+ Mo 0.666667 0.333333 0.8613073181
+
+K_POINTS {automatic}
+12 12 5 0 0 0
+
+! Original ATOMIC_POSTIIONS
+! S  0.333333 0.666667 0.144826
+! S  0.666667 0.333333 0.644826
+! S  0.333333 0.666667 0.355174
+! S  0.666667 0.333333 0.855174
+! Mo 0.666667 0.333333 0.250000
+! Mo 0.333333 0.666667 0.750000
