@@ -1,0 +1,6 @@
+&dos
+ outdir='./outdir'
+ prefix='MoS2-2H'
+ fildos='MoS2.dos.dat'
+ Emin=-5, Emax=5, DeltaE=0.01
+ /

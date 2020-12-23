@@ -1,0 +1,5 @@
+&INPUTPH
+  outdir='./outdir'
+  prefix = 'MoS2-2H'
+/
+0 0 0
