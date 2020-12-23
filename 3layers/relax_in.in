@@ -1,0 +1,51 @@
+&control
+    calculation  = 'relax',
+    restart_mode = 'from_scratch',
+    prefix       = 'MoS2-2H',
+    pseudo_dir   = 'C:/Users/user/Desktop/qe_test/PSEUDO_PP_USPP/all_lda_UPF_v1.5',
+    outdir       = './outdir',
+    wf_collect    = .true.
+    verbosity     = 'high'
+    etot_conv_thr = 1.0D-5
+    forc_conv_thr = 1.0D-4
+/
+&system
+    ibrav       = 4,
+    celldm(1)   = 6.02,
+    celldm(3)   = 9.327604975,
+    nat         = 9,
+    ntyp        = 2,
+    ecutwfc     = 50,
+    ecutrho = 400,
+    occupations = 'smearing',
+    degauss     = 0.01
+    ! vdw_corr    = 'dft-d'
+    ! tot_charge  = 0.5
+/
+&electrons
+    conv_thr         = 1.0e-8
+    electron_maxstep = 100,
+    mixing_mode      = 'plain'
+    !mixing_beta      = 0.1
+    !diagonalization  ='cg'
+/
+&ions
+/
+
+ATOMIC_SPECIES
+  Mo 95.94000 mo_lda_v1.uspp.F.UPF
+  S 32.06600 s_lda_v1.4.uspp.F.UPF
+
+ATOMIC_POSITIONS {crystal}
+ S  0.333333 0.666667 0.1474129989
+ S  0.333333 0.666667 0.2525870011
+ S  0.666667 0.333333 0.4141532432
+ S  0.666667 0.333333 0.5193272454
+ S  0.333333 0.666667 0.6808934875
+ S  0.333333 0.666667 0.7860674897
+ Mo 0.666667 0.333333 0.200000
+ Mo 0.333333 0.666667 0.4667402443
+ Mo 0.666667 0.333333 0.7334804886
+
+K_POINTS {automatic}
+6 6 1 0 0 0
